@@ -6,7 +6,7 @@ import Card from "../assets/card.png";
 const HeroAndFeatures = () => {
   const featureList = [
     { title: "Trade Smart", description: "Description of feature 1" },
-    { title: "Credit Card", description: "Description of feature 2" },
+    { title: "Lend Smart", description: "Description of feature 2" },
   ];
 
   return (

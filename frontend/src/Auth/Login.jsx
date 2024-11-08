@@ -1,19 +1,13 @@
 import React, { useState } from "react";
 import "./Login.css"; // Import the CSS file for styling
 
-const Login = () => {
+const Login = ({ handleLogin }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-    const givenUsername = "aashish"
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    
-    console.log(username);
-    console.log(password);
-
-    alert("Login submitted!");
+    handleLogin(username, password);
     setUsername("");
     setPassword("");
   };
