@@ -1,13 +1,21 @@
-// HeroAndFeatures.js
 import React from "react";
+import { useNavigate } from "react-router-dom"; // Import useNavigate for navigation
 import "./css/Homepage.css"; // Import your CSS file for styling
 import Card from "../assets/card.png";
 
 const HeroAndFeatures = () => {
+  const navigate = useNavigate(); // Initialize navigate
+
   const featureList = [
-    { title: "Trade Smart", description: "Description of feature 1" },
+    { title: "Trade Smart", description: "Description of feature 1", route: "/tradesmart" },
     { title: "Lend Smart", description: "Description of feature 2" },
   ];
+
+  const handleFeatureClick = (route) => {
+    if (route) {
+      navigate(route); // Navigate to the specified route
+    }
+  };
 
   return (
     <>
@@ -18,8 +26,13 @@ const HeroAndFeatures = () => {
         </div>
         <div className="features">
           {featureList.map((feature, index) => (
-            <div className="feature" key={index}>
-              <img src={Card}></img>
+            <div 
+              className="feature" 
+              key={index} 
+              onClick={() => handleFeatureClick(feature.route)} // Handle click event
+              style={{ cursor: 'pointer' }} // Change cursor to pointer for better UX
+            >
+              <img src={Card} alt={feature.title}></img>
               <p>{feature.title}</p>
             </div>
           ))}

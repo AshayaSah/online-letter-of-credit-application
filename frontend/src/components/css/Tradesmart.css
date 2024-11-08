@@ -1,0 +1,66 @@
+.tradesmart {
+    max-width: 90%;
+    margin: auto;
+    background-color: white;
+  }
+  
+  .tradesmart p{
+    margin: 20px 0;
+  }
+
+  /* Container for the services list */
+.services-list {
+    margin: auto;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  /* Each service item */
+  .service-item {
+    flex: 1 1 calc(33.33% - 20px);
+    border: 1px solid #b8d0e6;  /* Light Blue border */
+    border-radius: 10px;
+    background-color: #f0f8ff;  /* Very light blue background */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);  /* Soft shadow for depth */
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;  /* Smooth hover effect */
+    overflow: hidden;
+    text-align: center;
+  }
+  
+  /* Service item title */
+  .service-item h3 {
+    font-size: 1.5rem;
+    color: #4c8cd1;  /* Mild Blue color for headings */
+    margin-bottom: 15px;
+    font-weight: 600;
+  }
+  
+  /* Service item description */
+  .service-item p {
+    font-size: 1rem;
+    color: #555;  /* Dark grey for text */
+    margin-bottom: 20px;
+  }
+  
+  /* Hover effect for service items */
+  .service-item:hover {
+    transform: translateY(-10px);  /* Lift the card */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);  /* Stronger shadow */
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 992px) {
+    .service-item {
+      flex: 1 1 calc(50% - 20px);  /* 2 items per row on tablets */
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .service-item {
+      flex: 1 1 100%;  /* 1 item per row on mobile */
+    }
+  }
+  
