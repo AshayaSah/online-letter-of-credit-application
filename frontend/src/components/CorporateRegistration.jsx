@@ -1,22 +1,26 @@
 import React, { useState } from "react";
 import "./css/CorporateRegistration.css";
+import { useNavigate } from "react-router-dom";
 
 function CorporateRegistration({ onAddAccount }) {
   const [accountName, setAccountName] = useState("");
   const [accountNumber, setAccountNumber] = useState("");
   const [email, setEmail] = useState("");
 
+  const navigate = useNavigate(); // Initialize useNavigate
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    onAddAccount({ accountName, accountNumber, email });
+    onAddAccount({ accountName, accountNumber, email, isActive: false });
     setAccountName("");
     setAccountNumber("");
     setEmail("");
+    navigate("/corporate"); // Navigate to the Corporate page
   };
 
   return (
     <>
-      <form>
+      <form onSubmit={handleSubmit}>
         <div className="form-container">
           {/* Title Heading */}
           <h1 className="form-title">Corporate Registration</h1>

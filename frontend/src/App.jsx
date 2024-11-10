@@ -30,6 +30,12 @@ const App = () => {
     setAccounts([...accounts, account]);
   };
 
+  const toggleAccountStatus = (index) => {
+    const updatedAccounts = [...accounts];
+    updatedAccounts[index].isActive = !updatedAccounts[index].isActive; // Toggle the active status
+    setAccounts(updatedAccounts); // Update the state
+  };
+
   return (
     <Router>
       <Navbar user={user} /> {/* Pass user to Navbar */}
@@ -61,7 +67,7 @@ const App = () => {
           path="/corporate"
           element={
             user ? (
-              <Corporate accounts={accounts} />
+              <Corporate accounts={accounts} onToggleStatus={toggleAccountStatus} />
             ) : (
               <Login handleLogin={handleLogin}></Login>
             )

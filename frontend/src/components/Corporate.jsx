@@ -1,15 +1,8 @@
-// src/components/Corporate.js
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./css/Corporate.css";
 
-const Corporate = () => {
-  const [accounts, setAccounts] = useState([]);
-
-  const handleAddAccount = (account) => {
-    setAccounts([...accounts, account]);
-  };
-
+const Corporate = ({ accounts, onToggleStatus }) => {
   return (
     <div>
       <h1>Corporate Accounts</h1>
@@ -23,6 +16,7 @@ const Corporate = () => {
             <th>Account Name</th>
             <th>Account Number</th>
             <th>Email</th>
+            <th>Status</th> {/* New Status Column */}
           </tr>
         </thead>
         <tbody>
@@ -31,6 +25,16 @@ const Corporate = () => {
               <td>{account.accountName}</td>
               <td>{account.accountNumber}</td>
               <td>{account.email}</td>
+              <td>
+                <button
+                  className={`status-button ${
+                    account.isActive ? "active" : "inactive"
+                  }`}
+                  onClick={() => onToggleStatus(index)} // Call toggle function
+                >
+                  {account.isActive ? "Active" : "Not Active"}
+                </button>
+              </td>
             </tr>
           ))}
         </tbody>
