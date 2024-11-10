@@ -12,10 +12,12 @@ import TradeSmart from "./components/Tradesmart";
 import Corporate from "./components/Corporate";
 import CorporateRegistration from "./components/CorporateRegistration";
 import LCIssuance from "./components/LCIssuance";
+import LCIssuanceForm from "./components/LCIssuanceForm";
 
 const App = () => {
   const [user, setUser] = useState("");
   const [accounts, setAccounts] = useState([]);
+  const [LcIssuances, setLcIssuances] = useState([])
 
   const handleLogin = (username, password) => {
     if (username === "aashish" && password === "123") {
@@ -28,6 +30,10 @@ const App = () => {
 
   const handleAddAccount = (account) => {
     setAccounts([...accounts, account]);
+  };
+
+  const handleAddLcIssuance = (LcIssuance) => {
+    setLcIssuances([...LcIssuances, LcIssuance]);
   };
 
   const toggleAccountStatus = (index) => {
@@ -54,6 +60,19 @@ const App = () => {
           }
         />
         <Route
+          path="/corporate"
+          element={
+            user ? (
+              <Corporate
+                accounts={accounts}
+                onToggleStatus={toggleAccountStatus}
+              />
+            ) : (
+              <Login handleLogin={handleLogin}></Login>
+            )
+          }
+        />
+        <Route
           path="/corporate/corporate-registration"
           element={
             user ? (
@@ -64,19 +83,23 @@ const App = () => {
           }
         />
         <Route
-          path="/corporate"
+          path="/lc-issuance"
           element={
             user ? (
-              <Corporate accounts={accounts} onToggleStatus={toggleAccountStatus} />
+              <LCIssuance LcIssuances ={LcIssuances}/>
             ) : (
               <Login handleLogin={handleLogin}></Login>
             )
           }
         />
         <Route
-          path="/lc-issuance"
+          path="lc-issuance/lc-issuance-apply"
           element={
-            user ? <LCIssuance /> : <Login handleLogin={handleLogin}></Login>
+            user ? (
+              <LCIssuanceForm onAddLcIssuance = {handleAddLcIssuance}/>
+            ) : (
+              <Login handleLogin={handleLogin}></Login>
+            )
           }
         />
       </Routes>

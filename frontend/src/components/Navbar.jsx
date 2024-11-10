@@ -19,7 +19,7 @@ const Navbar = ({ user }) => {
 
   return (
     <nav className="navbar">
-      <div className="logo">
+      <div className="logo" onClick={() => navigate("/")}>
         <img src={Logo} alt="Logo" />
       </div>
       <div className="login">

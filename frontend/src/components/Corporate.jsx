@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "./css/Corporate.css";
 
 const Corporate = ({ accounts, onToggleStatus }) => {
+    
   return (
     <div>
       <h1>Corporate Accounts</h1>
