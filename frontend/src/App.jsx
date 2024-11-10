@@ -9,9 +9,13 @@ import Navbar from "./components/Navbar";
 import Login from "./Auth/Login";
 import Homepage from "./components/Homepage";
 import TradeSmart from "./components/Tradesmart";
+import Corporate from "./components/Corporate";
+import CorporateRegistration from "./components/CorporateRegistration";
+import LCIssuance from "./components/LCIssuance";
 
 const App = () => {
   const [user, setUser] = useState("");
+  const [accounts, setAccounts] = useState([]);
 
   const handleLogin = (username, password) => {
     if (username === "aashish" && password === "123") {
@@ -20,6 +24,10 @@ const App = () => {
     } else {
       alert("Invalid credentials");
     }
+  };
+
+  const handleAddAccount = (account) => {
+    setAccounts([...accounts, account]);
   };
 
   return (
@@ -37,6 +45,32 @@ const App = () => {
           path="/tradesmart"
           element={
             user ? <TradeSmart /> : <Login handleLogin={handleLogin}></Login>
+          }
+        />
+        <Route
+          path="/corporate/corporate-registration"
+          element={
+            user ? (
+              <CorporateRegistration onAddAccount={handleAddAccount} />
+            ) : (
+              <Login handleLogin={handleLogin} />
+            )
+          }
+        />
+        <Route
+          path="/corporate"
+          element={
+            user ? (
+              <Corporate accounts={accounts} />
+            ) : (
+              <Login handleLogin={handleLogin}></Login>
+            )
+          }
+        />
+        <Route
+          path="/lc-issuance"
+          element={
+            user ? <LCIssuance /> : <Login handleLogin={handleLogin}></Login>
           }
         />
       </Routes>
