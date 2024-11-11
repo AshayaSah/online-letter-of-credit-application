@@ -15,7 +15,7 @@ function CorporateRegistration({ onAddAccount }) {
     setAccountName("");
     setAccountNumber("");
     setEmail("");
-    navigate("/corporate"); // Navigate to the Corporate page
+    navigate("/corporate", { replace: true }); // Navigate to the Corporate page
   };
 
   return (
@@ -137,6 +137,7 @@ function CorporateRegistration({ onAddAccount }) {
               <input type="file" className="form-file-upload" />
             </div>
           </div>
+
           <div className="form-document-submit">
             <div className="document-pair">
               <label className="form-label">
@@ -153,6 +154,7 @@ function CorporateRegistration({ onAddAccount }) {
               <input type="file" className="form-file-upload" />
             </div>
           </div>
+
           <div className="form-document-submit">
             <div className="document-pair">
               <label className="form-label">Tax Clearance(recent F/Y)</label>
