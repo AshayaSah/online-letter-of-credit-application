@@ -1,14 +1,15 @@
 import React from "react";
 import { useNavigate } from "react-router-dom"; // Import useNavigate for navigation
 import "./css/Homepage.css"; // Import your CSS file for styling
-import Card from "../assets/card.png";
+import TradeSmartImage from "../assets/tradesmart.png"; // Import Trade Smart image
+import LendSmartImage from "../assets/lendsmart.png";
 
 const HeroAndFeatures = () => {
   const navigate = useNavigate(); // Initialize navigate
 
   const featureList = [
-    { title: "Trade Smart", description: "Description of feature 1", route: "/tradesmart" },
-    { title: "Lend Smart", description: "Description of feature 2"},
+    { title: "Trade Smart", description: "Description of feature 1", route: "/tradesmart", image:TradeSmartImage },
+    { title: "Lend Smart", description: "Description of feature 2", image:LendSmartImage},
   ];
 
   const handleFeatureClick = (route) => {
@@ -32,7 +33,7 @@ const HeroAndFeatures = () => {
               onClick={() => handleFeatureClick(feature.route)} // Handle click event
               style={{ cursor: 'pointer' }} // Change cursor to pointer for better UX
             >
-              <img src={Card} alt={feature.title}></img>
+              <img src={feature.image} alt={feature.title}></img>
               <p>{feature.title}</p>
             </div>
           ))}
