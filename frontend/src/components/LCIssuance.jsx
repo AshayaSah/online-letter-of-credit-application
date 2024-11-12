@@ -17,7 +17,7 @@ const LcIssuance = ({ LcIssuances }) => {
   return (
     <div className="lc-issuance-container">
       <h1>LC Issuance</h1>
-      <Link to="/lc-issuance/lc-issuance-apply">
+      <Link to="/tradesmart/lc-issuance/lc-issuance-apply">
         <button className="apply-button">Apply LC Issuance</button>
       </Link>
 

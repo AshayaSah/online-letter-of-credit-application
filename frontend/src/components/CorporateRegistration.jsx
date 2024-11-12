@@ -15,7 +15,7 @@ function CorporateRegistration({ onAddAccount }) {
     setAccountName("");
     setAccountNumber("");
     setEmail("");
-    navigate("/corporate", { replace: true }); // Navigate to the Corporate page
+    navigate("/tradesmart/corporate", { replace: true }); // Navigate to the Corporate page
   };
 
   return (

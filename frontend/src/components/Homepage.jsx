@@ -7,10 +7,8 @@ const HeroAndFeatures = () => {
   const navigate = useNavigate(); // Initialize navigate
 
   const featureList = [
-    { title: "Debit Card", description: "Description of feature 1", route: "/tradesmart" },
-    { title: "Corpoate", description: "Description of feature 2", route: "/corporate"},
-    { title: "LC Issuance", description: "Description of feature 2", route: "/lc-issuance" },
-    { title: "Bank Guarantee", description: "Description of feature 2" },
+    { title: "Trade Smart", description: "Description of feature 1", route: "/tradesmart" },
+    { title: "Lend Smart", description: "Description of feature 2"},
   ];
 
   const handleFeatureClick = (route) => {

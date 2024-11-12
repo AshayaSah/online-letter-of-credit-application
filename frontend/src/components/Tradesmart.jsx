@@ -1,53 +1,58 @@
 import React from "react";
 import "./css/TradeSmart.css"; // Import CSS for styling if needed
+import { useNavigate } from "react-router-dom";
+import Card from "../assets/card.png";
 
 const TradeSmart = () => {
   const services = [
     {
-      title: "Letter of Credit (LC)",
-      description:
-        "Enables the issuance, amendment, and management of Letters of Credit, ensuring secure and reliable international trade transactions.",
+      title: "Debit Card",
+      description: "Description of feature 1",
     },
     {
-      title: "Bank Guarantee (BG)",
-      description:
-        "Facilitates the creation and management of Bank Guarantees, helping banks support their clients in securing payment obligations.",
+      title: "Corpoate",
+      description: "Description of feature 2",
+      route: "/tradesmart/corporate",
     },
     {
-      title: "Supply Chain Financing (SCF)",
-      description:
-        "Offers solutions for financing across the supply chain, allowing businesses to optimize cash flow and manage working capital efficiently.",
+      title: "LC Issuance",
+      description: "Description of feature 2",
+      route: "/tradesmart/lc-issuance",
     },
-    {
-      title: "Trade Loans",
-      description:
-        "Streamlining operations and improving customer engagement with fintech solutions.",
-    },
-    {
-      title: "Bills",
-      description:
-        "Supports the handling of trade bills, ensuring accurate and timely processing of payments and documents.",
-    },
+    { title: "Bank Guarantee", description: "Description of feature 2" },
   ];
+
+  const navigate = useNavigate(); // Initialize navigate
+  const handleFeatureClick = (route) => {
+    if (route) {
+      navigate(route); // Navigate to the specified route
+    }
+  };
 
   return (
     <div className="tradesmart">
       <h2>Trade Services</h2>
       <p>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CAS, in partnership with Newgen, offers a powerful TradeSmart designed
-        to support banks in managing and optimizing their trade finance
-        operations. Our solution seamlessly integrates with your core banking
-        systems and third-party applications while providing advanced features
-        powered by cutting-edge technologies like AI. This module covers
-        multiple critical areas of trade finance, including Letters of Credit,
-        Bank Guarantees, Supply Chain Financing, Trade Loans, and Bills, each
-        tailored to address specific business needs.{" "}
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CAS,
+        in partnership with Newgen, offers a powerful TradeSmart designed to
+        support banks in managing and optimizing their trade finance operations.
+        Our solution seamlessly integrates with your core banking systems and
+        third-party applications while providing advanced features powered by
+        cutting-edge technologies like AI. This module covers multiple critical
+        areas of trade finance, including Letters of Credit, Bank Guarantees,
+        Supply Chain Financing, Trade Loans, and Bills, each tailored to address
+        specific business needs.{" "}
       </p>
       <div className="services-list">
-        {services.map((service, index) => (
-          <div className="service-item" key={index}>
-            <h3>{service.title}</h3>
-            <p>{service.description}</p>
+        {services.map((feature, index) => (
+          <div
+            className="feature"
+            key={index}
+            onClick={() => handleFeatureClick(feature.route)} // Handle click event
+            style={{ cursor: "pointer" }} // Change cursor to pointer for better UX
+          >
+            <img src={Card} alt={feature.title}></img>
+            <p>{feature.title}</p>
           </div>
         ))}
       </div>

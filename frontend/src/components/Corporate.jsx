@@ -7,7 +7,7 @@ const Corporate = ({ accounts, onToggleStatus }) => {
   return (
     <div>
       <h1>Corporate Accounts</h1>
-      <Link to="/corporate/corporate-registration">
+      <Link to="/tradesmart/corporate/corporate-registration">
         <button className="add-button">Add Corporate Account</button>
       </Link>
 

@@ -48,7 +48,7 @@ const LCIssuanceForm = ({ onAddLcIssuance }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     onAddLcIssuance({ requestName, requestID, requestDate, isPending: true });
-    navigate("/lc-issuance", { replace: true }); // Navigate to the Corporate page
+    navigate("/tradesmart/lc-issuance", { replace: true }); // Navigate to the Corporate page
   };
 
   return (
@@ -65,7 +65,7 @@ const LCIssuanceForm = ({ onAddLcIssuance }) => {
             className="form-logo"
           />
           <h2 className="form-subheading-text">
-            Welcome to Global Bank LC Form
+            Welcome to Nepal ABC Bank LC Form
           </h2>
         </div>
 

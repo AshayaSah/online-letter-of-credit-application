@@ -60,7 +60,7 @@ const App = () => {
           }
         />
         <Route
-          path="/corporate"
+          path="/tradesmart/corporate"
           element={
             user ? (
               <Corporate
@@ -73,7 +73,7 @@ const App = () => {
           }
         />
         <Route
-          path="/corporate/corporate-registration"
+          path="/tradesmart/corporate/corporate-registration"
           element={
             user ? (
               <CorporateRegistration onAddAccount={handleAddAccount} />
@@ -83,7 +83,7 @@ const App = () => {
           }
         />
         <Route
-          path="/lc-issuance"
+          path="/tradesmart/lc-issuance"
           element={
             user ? (
               <LCIssuance LcIssuances ={LcIssuances}/>
@@ -93,7 +93,7 @@ const App = () => {
           }
         />
         <Route
-          path="lc-issuance/lc-issuance-apply"
+          path="/tradesmart/lc-issuance/lc-issuance-apply"
           element={
             user ? (
               <LCIssuanceForm onAddLcIssuance = {handleAddLcIssuance}/>
