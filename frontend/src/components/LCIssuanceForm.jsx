@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./css/LCIssuanceForm.css";
 import { useNavigate } from "react-router-dom";
+import Logo from "../assets/logo.png"
 
 const FormField = ({ label, children, className }) => (
   <div className={`form-field ${className}`}>
@@ -60,7 +61,7 @@ const LCIssuanceForm = ({ onAddLcIssuance }) => {
         {/* Subheading with Logo and Text */}
         <div className="form-subheading">
           <img
-            src="https://via.placeholder.com/40"
+            src={Logo}
             alt="Global Logo"
             className="form-logo"
           />

@@ -3,10 +3,14 @@ import { Link } from "react-router-dom";
 import "./css/Corporate.css";
 
 const Corporate = ({ accounts, onToggleStatus }) => {
-    
   return (
-    <div>
+    <div className="corporate-container">
       <h1>Corporate Accounts</h1>
+      <div className="text-section">
+        Please fill out the details below to complete the corporate registration
+        process. Ensure all information is accurate and complete for successful
+        registration.
+      </div>
       <Link to="/tradesmart/corporate/corporate-registration">
         <button className="add-button">Add Corporate Account</button>
       </Link>

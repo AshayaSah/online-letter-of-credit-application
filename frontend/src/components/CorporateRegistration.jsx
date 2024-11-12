@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./css/CorporateRegistration.css";
 import { useNavigate } from "react-router-dom";
+import Logo from "../assets/logo.png"
 
 function CorporateRegistration({ onAddAccount }) {
   const [accountName, setAccountName] = useState("");
@@ -28,12 +29,12 @@ function CorporateRegistration({ onAddAccount }) {
           {/* Subheading with Logo and Text */}
           <div className="form-subheading">
             <img
-              src="https://via.placeholder.com/40"
+              src={Logo}
               alt="Global Logo"
               className="form-logo"
             />
             <h2 className="form-subheading-text">
-              Welcome to Global Bank Registration Form
+              Welcome to Nepal ABC Bank Corporate Registration Form
             </h2>
           </div>
 
@@ -115,8 +116,8 @@ function CorporateRegistration({ onAddAccount }) {
           </div>
 
           {/* Document Request Text */}
-          <div className="form-document-request">
-            Please provide the Board Minute Verified Document.
+          <div className="form-document-request form-section-title">
+            PLEASE PROVIDE THE BOARD MINUTE VERIFIED DOCUMENT.
           </div>
 
           {/* File Upload Fields */}

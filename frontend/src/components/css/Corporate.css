@@ -1,4 +1,7 @@
-
+.corporate-container{
+  max-width: 90%;
+  margin: auto;
+}
   
   h1 {
     text-align: center;
@@ -11,7 +14,7 @@
   
   .add-button {
     display: block;
-    margin: 20px auto;
+    margin: 20px 0px;
     padding: 10px 20px;
     font-size: 16px;
     color: #fff;
@@ -29,7 +32,7 @@
   
   /* Table styles */
   .corporate-table {
-    width: 90%;
+    min-width: 100%;
     max-width: 1200px;
     margin: 20px auto;
     border-collapse: collapse;
@@ -56,7 +59,7 @@
   /* Responsive styles */
   @media (max-width: 768px) {
     .corporate-table {
-      width: 100%;
+      width: 90%;
     }
   
     .corporate-table th,
@@ -74,46 +77,6 @@
   @media (max-width: 480px) {
     h1 {
       font-size: 24px;
-    }
-  
-    .add-button {
-      width: 100%;
-      padding: 12px;
-      font-size: 16px;
-    }
-  
-    .corporate-table th,
-    .corporate-table td {
-      display: block;
-      width: 100%;
-      box-sizing: border-box;
-    }
-  
-    .corporate-table th {
-      display: none; /* Hide headers for small screens */
-    }
-  
-    .corporate-table tr {
-      margin-bottom: 15px;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-      overflow: hidden;
-    }
-  
-    .corporate-table td {
-      text-align: right;
-      position: relative;
-      padding-left: 50%;
-    }
-  
-    .corporate-table td::before {
-      content: attr(data-label); /* Add a label before the data */
-      position: absolute;
-      left: 10px;
-      width: 45%;
-      padding-left: 10px;
-      text-align: left;
-      font-weight: bold;
     }
   }
 

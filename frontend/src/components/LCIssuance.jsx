@@ -17,10 +17,16 @@ const LcIssuance = ({ LcIssuances }) => {
   return (
     <div className="lc-issuance-container">
       <h1>LC Issuance</h1>
+      <label className="text-section">
+        LC Issuance is a bank guarantee in international trade, ensuring the
+        seller receives payment once agreed conditions are met, providing
+        security for both buyer and seller.
+      </label>
       <Link to="/tradesmart/lc-issuance/lc-issuance-apply">
         <button className="apply-button">Apply LC Issuance</button>
       </Link>
-
+      <hr></hr>
+      <br></br>
       <div className="tabs">
         <button
           onClick={() => handleTabChange("pending")}

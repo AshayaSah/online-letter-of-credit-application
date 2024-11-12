@@ -14,29 +14,31 @@ const Navbar = ({ user }) => {
     // Add logout functionality if needed
     alert("Logged out");
     navigate("/"); // Redirect to homepage
-    window.location.reload()
+    window.location.reload();
   };
 
   return (
-    <nav className="navbar">
-      <div className="logo" onClick={() => navigate("/")}>
-        <img src={Logo} alt="Logo" />
-      </div>
-      <div className="login">
-        {user ? (
-          <div className="user-name">
-            <span>Welcome, {user}</span>
-            <button className="logout-button" onClick={handleLogoutClick}>
-              Logout
+    <div className="navbar-container">
+      <nav className="navbar">
+        <div className="logo" onClick={() => navigate("/")}>
+          <img src={Logo} alt="Logo" />
+        </div>
+        <div className="login">
+          {user ? (
+            <div className="user-name">
+              <span>Welcome, {user}</span>
+              <button className="logout-button" onClick={handleLogoutClick}>
+                Logout
+              </button>
+            </div>
+          ) : (
+            <button className="login-button" onClick={handleLoginClick}>
+              Login
             </button>
-          </div>
-        ) : (
-          <button className="login-button" onClick={handleLoginClick}>
-            Login
-          </button>
-        )}
-      </div>
-    </nav>
+          )}
+        </div>
+      </nav>
+    </div>
   );
 };
 
