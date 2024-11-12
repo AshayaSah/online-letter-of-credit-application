@@ -619,10 +619,12 @@ const LCIssuanceForm = ({ onAddLcIssuance }) => {
         <div className="form-group">
           <h3 className="form-section-title">DOCUMENTS REQUIRED</h3>
 
+          {/* 1 */}
           <div className="document-section">
-            <div className="form-field">
+            <div className="document-form-field">
+              <label>1.</label>
               <label>
-                1. <input type="checkbox" /> Signed <input type="checkbox" />{" "}
+                <input type="checkbox" /> Signed <input type="checkbox" />{" "}
                 Commercial Invoice
                 <input type="checkbox" /> Tax Invoice in{" "}
                 <input type="number" className="form-input" /> Original/s and
@@ -631,32 +633,35 @@ const LCIssuanceForm = ({ onAddLcIssuance }) => {
             </div>
           </div>
 
+          {/* 2 */}
           <div className="document-section">
-            <div className="form-field">
-              <label>2. Transportation Document</label>
+            <div className="document-form-field">
+              <label>2.</label>
+              <label>Transportation Document</label>
             </div>
 
             {/* A */}
-            <div className="sub-document form-row flex-row">
-              <div className="form-field">
+            <div className="sub-document form-row">
+              <div className="document-form-field">
+                <label>A.</label>
                 <label>
-                  A. <input type="radio" name="transport" />
-                  &nbsp; For Land
+                  <input type="radio" name="transport" />
+                  For Land
                 </label>
               </div>
-              <p>
-                Lorry Receipt/Truck Receipt/Consignment Note Original Consignee
-                Copy In
-              </p>
-              <input type="text" className="form-input" />
-              <p>Original/s and</p>
-              <input type="text" className="form-input " />
-              <p>
-                Copies Issued by Carrier or its Authorized Agent Consigned to
-                Global IME Bank Limited Nepal Marked
-              </p>
+              <div className="document-form-field">
+                <label className="document-margin">
+                  Lorry Receipt/Truck Receipt/Consignment Note Original
+                  Consignee Copy In
+                  <input type="number" className="form-input" />
+                  Original/s and
+                  <input type="number" className="form-input" /> Copies Issued
+                  by Carrier or its Authorized Agent Consigned to Global IME
+                  Bank Limited Nepal Marked
+                </label>
+              </div>
             </div>
-            <div className="form-radio-group">
+            <div className="form-radio-group document-margin">
               <input
                 type="radio"
                 id="partialShipmentAllowed"
@@ -674,20 +679,23 @@ const LCIssuanceForm = ({ onAddLcIssuance }) => {
             </div>
 
             {/* B */}
-            <div className="sub-document form-row flex-row">
-              <div className="form-field">
+            <div className="sub-document form-row">
+              <div className="document-form-field">
+                <label>B.</label>
                 <label>
-                  B. <input type="radio" name="transport" />
-                  &nbsp; For Sea
+                  <input type="radio" name="transport" />
+                  For Sea
                 </label>
               </div>
-              <p>
-                3/3 Set of Original Clean Shipped On Board Ocean/Multimodal Bill
-                of Landing Issued by Carrier or its Authorized Agent Made Out to
-                the Order of Global IME Bank Limited Nepal Marked
-              </p>
+              <div className="document-form-field document-margin">
+                <label>
+                  3/3 Set of Original Clean Shipped On Board Ocean/Multimodal
+                  Bill of Landing Issued by Carrier or its Authorized Agent Made
+                  Out to the Order of Global IME Bank Limited Nepal Marked
+                </label>
+              </div>
             </div>
-            <div className="form-radio-group">
+            <div className="form-radio-group document-margin">
               <input
                 type="radio"
                 id="partialShipmentAllowed"
@@ -705,20 +713,23 @@ const LCIssuanceForm = ({ onAddLcIssuance }) => {
             </div>
 
             {/* C */}
-            <div className="sub-document form-row flex-row">
-              <div className="form-field">
+            <div className="sub-document form-row">
+              <div className="document-form-field">
+                <label>C.</label>
                 <label>
-                  C. <input type="radio" name="transport" />
-                  &nbsp; FOR AIR
+                  <input type="radio" name="transport" />
+                  FOR AIR
                 </label>
               </div>
-              <p>
-                Air Waybill (Original 3 for Shipper) Issued by Carrier or its
-                Authorized Agent Consigned to Global IME Bank Limited Nepal,
-                Marked
-              </p>
+              <div className="document-form-field document-margin">
+                <label>
+                  Air Waybill (Original 3 for Shipper) Issued by Carrier or its
+                  Authorized Agent Consigned to Global IME Bank Limited Nepal,
+                  Marked
+                </label>
+              </div>
             </div>
-            <div className="form-radio-group">
+            <div className="form-radio-group document-margin">
               <input
                 type="radio"
                 id="partialShipmentAllowed"
@@ -736,112 +747,111 @@ const LCIssuanceForm = ({ onAddLcIssuance }) => {
             </div>
 
             {/* D */}
-            <div className="sub-document form-row flex-row">
-              <div className="form-field">
+            <div className="sub-document form-row">
+              <div className="document-form-field">
+                <label>D.</label>
                 <label>
-                  D. <input type="radio" name="transport" />
-                  &nbsp; FOR RAIL
+                  <input type="radio" name="transport" />
+                  FOR RAIL
                 </label>
               </div>
-              <p>
-                Copy of Railway Receipt Made Out to the Order of Global IME Bank
-                Limited, Nepal and Marked Paid
-              </p>
+              <div className="document-form-field document-margin">
+                <label>
+                  Copy of Railway Receipt Made Out to the Order of Global IME
+                  Bank Limited, Nepal and Marked Paid
+                </label>
+              </div>
             </div>
           </div>
-          <hr></hr>
 
           {/* 3 */}
           <div className="document-section">
-            <label>
-              3. <input type="checkbox" />
-              Certificate of <input type="text" className="form-input" />
-              Origin in
-            </label>
-            <input type="text" className="form-input" />
-            <label>Original/s and</label>
-            <input type="text" className="form-input" />
-            <label>Copy/ies Issued by</label>
-            <input type="checkbox" />
-            <label>Beneficiary</label>
-            <input type="checkbox" />
-            <label>Chamber of Commerce</label>
-            <input type="checkbox" />
-            <label>Government Authority</label>
-            <input type="checkbox" />
-            <label>Other (Specify)</label>
-            <input type="text" className="form-input" />
+            <div className="document-form-field">
+              <label>3.</label>
+              <label>
+                <input type="checkbox" /> Certificate of{" "}
+                <input type="number" className="form-input" /> Origin in
+                <input type="number" className="form-input" /> Original/s and
+                <input type="number" className="form-input" /> Copy/ies Issued
+                by
+                <input type="checkbox" /> <span>Beneficiary</span>
+                <input type="checkbox" /> <span>Chamber of Commerce</span>
+                <input type="checkbox" /> <span>Government Authority</span>
+                <input type="checkbox" /> <span>Other (Specify)</span>
+                <input type="text" className="form-input" />
+              </label>
+            </div>
           </div>
 
           {/* 4 */}
           <div className="document-section">
-            <label>
-              4. <input type="checkbox" />
-              Packing List in
-            </label>
-            <input type="text" className="form-input" />
-            <label>Original/s and</label>
-            <input type="text" className="form-input" />
-            <label>Copy/ies</label>
+            <div className="document-form-field">
+              <label>4.</label>
+              <label>
+                <input type="checkbox" /> Packing List in
+                <input type="number" className="form-input" /> Original/s and
+                <input type="number" className="form-input" /> Copy/ies
+              </label>
+            </div>
           </div>
 
           {/*5*/}
           <div className="document-section">
-            <label>
-              5. <input type="checkbox" />
-              Weight List in
-            </label>
-            <input type="text" className="form-input" />
-            <label>Original/s and</label>
-            <input type="text" className="form-input" />
-            <label>Copy/ies</label>
+            <div className="document-form-field">
+              <label>5.</label>
+              <label>
+                <input type="checkbox" /> Weight List in
+                <input type="number" className="form-input" /> Original/s and
+                <input type="number" className="form-input" /> Copy/ies
+              </label>
+            </div>
           </div>
 
           {/*6*/}
           <div className="document-section">
-            <label>
-              6. <input type="checkbox" />
-              Insurance Policy or Certificate in
-            </label>
-            <input type="number" className="form-input" />
-            <label>Original/s and</label>
-            <input type="number" className="form-input" />
-            <label>
-              COPY/IES SSUED BY INSURANCE COMPANY IN FAVOUR OF GLOBAL IME BANK
-              LIMITED, NEPAL MENTIONING CLAIMS IF ANY SHALL BE PAYABLE IN NEPAL
-              IN THE CURRENCY OF CREDIT FOR INVOICE VALUE PLUS 10 PERCENT
-              COVERING FOLLOWING RISKS AS PER INSTITUTE CARGO{" "}
-            </label>
-            <div className="flex-row">
-              <input type="checkbox" /> <label>CLAUSE 'A (ALL RISKS)</label>
-              <input type="checkbox" />{" "}
-              <label>INSTITUTE INLAND TRANSIT CLAUSE A</label>
-              <input type="checkbox" /> <label>AIR RISK</label>
-              <input type="checkbox" /> <label>MARINE RISK</label>
-            </div>
-            <div>
+            <div className="document-form-field">
+              <label>6.</label>
               <label>
-                <input type="checkbox" /> INSTITUE WAR CLAUSE SRCC TPND,
-                TRANSSHIPMENT RISKS IF APPLICABLE IRRESPECTIVE OF PERCENTAGE AND
-                COVERING
-              </label>
-              <label>
-                ALL RISKS INCLUDING ROAD RISKS UPTO <input type="text"></input>
+                <input type="checkbox" /> Insurance Policy or Certificate in
+                <input type="number" className="form-input" /> Original/s and
+                <input type="number" className="form-input" /> Copy/ies issued
+                by insurance company in favor of Global IME Bank Limited, Nepal,
+                mentioning that any claims shall be payable in Nepal in the
+                currency of credit for invoice value plus 10 percent, covering
+                the following risks as per Institute Cargo:
+                <br />
+                <input type="checkbox" /> <span>Clause 'A (All Risks)</span>
+                <input type="checkbox" />{" "}
+                <span>Institute Inland Transit Clause A</span>
+                <input type="checkbox" /> <span>Air Risk</span>
+                <input type="checkbox" /> <span>Marine Risk</span>
+                <input type="checkbox" /> Institute War Clause SRCC TPND,
+                Transshipment Risks (if applicable), Irrespective of Percentage
+                and Covering
+                <br />
+                <span>All Risks Including Road Risks up to</span>{" "}
+                <input type="number" className="form-input" />
               </label>
             </div>
           </div>
 
           {/*7*/}
           <div className="document-section">
-            <label>
-              7. <input type="checkbox" />
-              OTHER DOCUMENTS (IF APPLICABLE PLEASE KEEP BULLET WISE)
-            </label>
-            <input type="number" className="form-input" />
-            <input type="checkbox"></input>
-            <label>Documents (file uploaded required)</label>
-
-            <input type="file" />
+            <div className="document-form-field">
+              <label>7.</label>
+              <label>
+                <input type="checkbox" /> Other Documents (if applicable, please
+                keep bullet wise)
+                <input type="text" className="form-input" />
+              </label>
+            </div>
+            <div className="document-form-field document-margin">
+              <label>
+                <input type="checkbox" />{" "}
+                <span>Documents (file upload required)</span>
+                <input type="file" />
+              </label>
+            </div>
           </div>
         </div>
 
@@ -849,7 +859,7 @@ const LCIssuanceForm = ({ onAddLcIssuance }) => {
         <div className="form-group">
           <h3 className="form-section-title">Other Terms and Conditions</h3>
           <label>Other conditions required as per attached sheet</label>
-          <textarea className="full-width form-input"></textarea>
+          <input type="text" className="form-input"></input>
         </div>
         <div className="form-group">
           <label>Separate sheet attached</label>
@@ -881,17 +891,19 @@ const LCIssuanceForm = ({ onAddLcIssuance }) => {
           <h3 className="form-section-title">Advising Bank Details</h3>
           <label>Advising Bank Details</label>
           <input type="text" className="full-width form-input" />
+          <div className="document-form-field text-section">
+            <label>
+              PLEASE ISSUE IRREVOCABLE LC AS PER ABOVE DETAIL/ TERMS AND
+              CONDITION ON OUR ACCOUNT WE GUARANTEE DUE COMPLIANCE / FULFILLMENT
+              OF ALL OBLIGATIONS OF THE OPENER / APPLICANT / IMPORTER / BUYER
+              UNDER THIS LC AS PER TERMS AND CONDITIONS OF LC,
+              GIBLPOLICIES/PRACTICES, UCPDC, NRB REGULATION, DIRECTIVE, CIRCULAR
+              AND STANDARD BANKING PRACTICES, WE ALSO UNCONDITIONALLY ACCEPT THE
+              SECURITY AGREEMENT PRINTED IN THIS FORM.
+            </label>
+          </div>
         </div>
 
-        <div className="text-section">
-          PLEASE ISSUE IRREVOCABLE LC AS PER ABOVE DETAIL/ TERMS AND CONDITION
-          ON OUR ACCOUNT WE GUARANTEE DUE COMPLIANCE / FULFILLMENT OF ALL
-          OBLIGATIONS OF THE OPENER / APPLICANT / IMPORTER / BUYER UNDER THIS LC
-          AS PER TERMS AND CONDITIONS OF LC, GIBLPOLICIES/PRACTICES, UCPDC, NRB
-          REGULATION, DIRECTIVE, CIRCULAR AND STANDARD BANKING PRACTICES, WE
-          ALSO UNCONDITIONALLY ACCEPT THE SECURITY AGREEMENT PRINTED IN THIS
-          FORM.
-        </div>
         <br></br>
         <hr></hr>
         {/*Terms and Conditions*/}
